@@ -168,7 +168,7 @@ def extract_function_calls(completion: str) -> List[Dict[str, Any]]:
     return [json.loads(fn.text) for fn in functions]
 
 
-def invoke_function(function, feature_view, model, encoder) -> pd.DataFrame:
+def invoke_function(function, feature_view, model) -> pd.DataFrame:
     """Invoke a function with given arguments."""
     # Extract function name and arguments from input_data
     function_name = function['name']
@@ -178,8 +178,7 @@ def invoke_function(function, feature_view, model, encoder) -> pd.DataFrame:
     function_output = getattr(sys.modules[__name__], function_name)(
         **arguments, 
         feature_view=feature_view, 
-        model=model, 
-        encoder=encoder,
+        model=model,
     )
     
     if type(function_output) == str:
@@ -190,7 +189,7 @@ def invoke_function(function, feature_view, model, encoder) -> pd.DataFrame:
     return function_output
 
 
-def get_context_data(user_query: str, feature_view, model_busyness, encoder, model_llm=None, tokenizer=None, client=None) -> str:
+def get_context_data(user_query: str, feature_view, model_busyness, model_llm=None, tokenizer=None, client=None) -> str:
     """
     Retrieve context data based on user query.
 
@@ -200,7 +199,6 @@ def get_context_data(user_query: str, feature_view, model_busyness, encoder, mod
         model_llm: The language model.
         tokenizer: The tokenizer.
         model_busyness: The busyness of the bar model.
-        encoder: The encoder.
 
     Returns:
         str: The context data.
@@ -224,7 +222,7 @@ def get_context_data(user_query: str, feature_view, model_busyness, encoder, mod
     # If function calls were found
     if functions:
         # Invoke the function with provided arguments
-        data = invoke_function(functions[0], feature_view, model_busyness, encoder)
+        data = invoke_function(functions[0], feature_view, model_busyness)
         # Return formatted data as string
         if isinstance(data, pd.DataFrame):
             return f'Air Quality Measurements for {functions[0]["arguments"]["city_name"]}:\n' + '\n'.join(

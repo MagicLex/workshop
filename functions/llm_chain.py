@@ -133,7 +133,6 @@ def generate_response(
     user_query: str, 
     feature_view, 
     model_air_quality, 
-    encoder, 
     model_llm, 
     tokenizer, 
     llm_chain=None,
@@ -148,7 +147,6 @@ def generate_response(
         model_llm: Language model for text generation.
         tokenizer: Tokenizer for processing text.
         model_air_quality: Model for predicting air quality.
-        encoder: Label Encoder for the city_name column.
         llm_chain: LLM Chain.
         verbose (bool): Whether to print verbose information. Defaults to False.
         
@@ -160,7 +158,6 @@ def generate_response(
         user_query,
         feature_view,
         model_air_quality, 
-        encoder,
         model_llm=model_llm, 
         tokenizer=tokenizer, 
     )
@@ -189,7 +186,6 @@ def generate_response_openai(
     user_query: str, 
     feature_view, 
     model_air_quality, 
-    encoder, 
     client,
     verbose=True,
 ):
@@ -198,7 +194,6 @@ def generate_response_openai(
         user_query,
         feature_view,
         model_air_quality,
-        encoder,
         client=client,
     )
     
