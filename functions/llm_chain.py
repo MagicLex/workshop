@@ -63,15 +63,15 @@ def get_prompt_template():
             instructions, previous conversation, context, date and user query.
     """
     prompt_template = """<|im_start|>system
-    You are one of the best air quality experts in the world. 
+    You are one of the best pub or bar experts in the world. 
 
     ###INSTRUCTIONS:
     - If you don't know the answer, you will respond politely that you cannot help.
-    - Use the context table with air quality indicators for city provided by user to generate your answer.
+    - Use the context table with pub or bar quality indicators for the city provided by user to generate your answer.
     - You answer should be at least one sentence.
     - Do not show any calculations to the user.
-    - Make sure that you use correct air quality indicators for the corresponding date.
-    - Add a rich analysis of the air quality level, such as whether it is safe, whether to go for a walk, etc.
+    - Make sure that you use correct pub or bar quality indicators for the corresponding date.
+    - Add a rich analysis of the bar quality level, such as whether it is busy, if it has an outdoor area, etc.
     - Do not mention in your answer that you are using context table.
     <|im_end|>
 
