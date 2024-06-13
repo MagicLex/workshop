@@ -6,7 +6,7 @@ Welcome to the Workshop Repository! This collection of Jupyter notebooks and scr
 ## Repository Structure
 - **busyness_model/**: Houses the model registry and related scripts for business analytics.
 - **functions/**: Contains utility functions and scripts to enhance model functionality.
-- **Notebooks**:
+- **Main Notebooks**:
   - **`bar-feature-engineering.ipynb`**: Feature engineering.
   - **`bar-training.ipynb`**: Trains machine learning models.
   - **`inference and function calling.ipynb`**: Inference and function calling mechanisms.
@@ -18,12 +18,18 @@ Welcome to the Workshop Repository! This collection of Jupyter notebooks and scr
 - **Inference Pipelines**: Integrate model inference
 - **real-time stuff** A real-time ML System.
 
+## Prerequisites
+- A free [Hopsworks account](https://app.hopsworks.ai)
+- A free [BestTime account](https://besttime.app/)
+
 ## Requirements
 To get started, clone the repository and install the necessary dependencies:
 ```bash
 pip install -r requirements.txt
+```
 
-Main Dependencies
+## Main Dependencies
+```bash
 langchain-community==0.0.38
 langchain-core==0.1.52
 xgboost==2.0.3
@@ -37,6 +43,7 @@ torch==2.3.1
 pandas==2.1.4
 hopsworks==3.7.0
 seaborn==0.13.2
+```
 
-Usage
+## Usage
 Clone the repository :) 
