@@ -7,9 +7,9 @@ Welcome to the Workshop Repository! This collection of Jupyter notebooks and scr
 - **busyness_model/**: Houses the model registry and related scripts for business analytics.
 - **functions/**: Contains utility functions and scripts to enhance model functionality.
 - **Main Notebooks**:
-  - **`bar-feature-engineering.ipynb`**: Feature engineering.
-  - **`bar-training.ipynb`**: Trains machine learning models.
-  - **`inference and function calling.ipynb`**: Inference and function calling mechanisms.
+  - **`1- Feature Pipeline - Foot Traffic Data and Feature Store.ipynb`**: Feature engineering with foot traffic data from bestTime.
+  - **`2- Training Pipeline - Bar Busyness Model.ipynb`**: Trains machine learning models.
+  - **`3- Inference Pipeline - Inference and Function Calling.ipynb`**: Inference and function calling mechanisms.
 
 ## What you will learn
 - **Feature Engineering**: State-of-the-art usage of the feature store for manipulating data as dataframe.
