@@ -193,6 +193,7 @@ def generate_response_openai(
     context = get_context_data(
         user_query,
         feature_view,
+        model_air_quality,
         client=client,
     )
     
